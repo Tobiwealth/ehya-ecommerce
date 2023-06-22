@@ -16,7 +16,10 @@ module.exports = {
         'yelloww' : 'rgba(250, 173, 19, 1)',
         'bluee' : 'rgba(21, 101, 216, 1)',
         'hero-text' : "rgba(90, 113, 132, 1)",
-      }
+        'greyy' : 'rgba(149, 158, 173, 1)',
+        'light-green' : '#DDFFDD',
+        'redd' : 'rgba(233, 84, 50, 1)',
+      },
     },
   },
   plugins: [],
