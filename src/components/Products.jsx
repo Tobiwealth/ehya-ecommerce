@@ -11,7 +11,7 @@ import Rectangle8 from '../images/Rectangle8.svg';
 
 const Products = () => {
 	return (
-		<div className="flex justify-center items-center p-2 xl:p-0">
+		<div className="flex justify-center items-center p-2 xl:p-0 mb-8">
 			<div>
 				<div className="p-4 mb-12">
 					<h1 className="text-hk-grotesk font-bold text-blackk text-2xl md:text-3xl lg:text-[2.5rem] text-center p-6 ">Product Recommendation</h1>
