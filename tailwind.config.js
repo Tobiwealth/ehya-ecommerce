@@ -21,6 +21,9 @@ module.exports = {
         'redd' : 'rgba(233, 84, 50, 1)',
         'light-grey' : 'rgba(179, 186, 197, 1)',
       },
+      borderRadius: {
+        'half': '50%',
+      }
     },
   },
   plugins: [],

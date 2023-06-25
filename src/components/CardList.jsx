@@ -15,7 +15,7 @@ import iconspaceTshirt from '../images/iconspaceTshirt.png';
 
 const CardList = () => {
 	return (
-		<div className="grid place-items-center">
+		<div className="grid place-items-center border-t-2 p-4">
 			<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-10 p-8 md:p-12 lg:p-16">
 				<CardItem src={iconspaceTshirt} name="Fashion"/>
 				<CardItem src={iconspaceandroidphone} name="Handphone"/>
