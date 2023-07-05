@@ -1,60 +1,33 @@
 import React from 'react';
-import image3 from '../../images/image3.png';
-import image4 from '../../images/image4.png';
-import image5 from '../../images/image5.png';
-import image6 from '../../images/image6.png';
-import star from '../../images/star.png';
 
-const MostSoldCamera = () => {
+
+const MostSoldCamera = ({product}) => {
+	let url = "http://localhost:1337"; 
+
 	return (
 		<div>
 			<div className="p-4">
 				<h3 className="text-hk-grotesk font-bold text-blackk text-2xl mb-8">Most Sold Camera</h3>
 				<div className="flex flex-col gap-6">
-					<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
-						<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={image3} alt="sold"/></div>
-						<div className="flex flex-col ">
-						    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">Leica M3 1972</h4>
-						    <div gap-4 className="flex justify-center items-center gap-2">
-						    	<img className="" src={star} alt="star"/>
-						    	<span className="text-blackk text-sm text-open-sans -ml-1">4,8</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
-						    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>2,1k</span><span className="ml-1">Unit sold</span></p>
-						    </div>
-						</div>
-					</div>
-					<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
-						<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={image4} alt="sold"/></div>
-						<div className="flex flex-col ">
-						    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">Leica M3 1972</h4>
-						    <div gap-4 className="flex justify-center items-center gap-2">
-						    	<img className="" src={star} alt="star"/>
-						    	<span className="text-blackk text-sm text-open-sans -ml-1">4,8</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
-						    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>2,1k</span><span className="ml-1">Unit sold</span></p>
-						    </div>
-						</div>
-					</div>
-					<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
-						<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={image5} alt="sold"/></div>
-						<div className="flex flex-col ">
-						    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">Leica M3 1972</h4>
-						    <div gap-4 className="flex justify-center items-center gap-2">
-						    	<img className="" src={star} alt="star"/>
-						    	<span className="text-blackk text-sm text-open-sans -ml-1">4,8</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
-						    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>2,1k</span><span className="ml-1">Unit sold</span></p>
-						    </div>
-						</div>
-					</div>
-					<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
-						<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={image6} alt="sold"/></div>
-						<div className="flex flex-col ">
-						    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">Leica M3 1972</h4>
-						    <div gap-4 className="flex justify-center items-center gap-2">
-						    	<img className="" src={star} alt="star"/>
-						    	<span className="text-blackk text-sm text-open-sans -ml-1">4,8</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
-						    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>2,1k</span><span className="ml-1">Unit sold</span></p>
-						    </div>
-						</div>
-					</div>
+				    {
+				    	product.map((item,i) => {
+				    		if(i > 3 && i < 8){
+				    			return(
+				    				<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
+										<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} alt="sold"/></div>
+										<div className="flex flex-col ">
+										    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">{item?.attributes?.name}</h4>
+										    <div className="flex justify-center items-center gap-2">
+										    	<img className="" src={`${url}/uploads/star_f995c25b87.png`} alt="star"/>
+										    	<span className="text-blackk text-sm text-open-sans -ml-1">{item?.attributes?.rating}</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
+										    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>{item?.attributes?.unitsold}k</span><span className="ml-1">Unit sold</span></p>
+										    </div>
+										</div>
+									</div>
+				    			)
+				    		}
+				    	})
+				    }
 				</div>
 				<div className="p-8 pl-6 text-open-sans font-bold text-green-button flex justify-between items-center w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] text-base ">
 					<p className="cursor-pointer">Leaderboard details</p> <i className="fa-solid fa-chevron-right cursor-pointer"></i>

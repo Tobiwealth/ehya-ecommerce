@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import Logo from '../images/Logo.png';
 import { motion } from "framer-motion";
 import {Link} from 'react-router-dom';
 
 const Navbar = () => {
+	let url = "http://localhost:1337";
 	const [closeMobile, setCloseMobile] = useState(false);
 	const variants = {
 		open: { opacity: 1, x: 0 },
@@ -14,7 +14,7 @@ const Navbar = () => {
 		<nav className="flex justify-center w-screen h-24 sticky top-0 bg-white z-50">
 			<div className="flex flex-col items-center w-full lg:hidden ">
 				<div className="w-full flex justify-between items-center p-8">
-					<img src={Logo} alt="logo"/>
+					<img src={`${url}/uploads/Logo_2105b82d76.png`} alt="logo"/>
 					{
 						closeMobile ? 
 						    <div onClick={() => setCloseMobile(false)} ><i className="fas fa-times" style={{fontSize:'27px'}}></i></div> 
@@ -38,7 +38,7 @@ const Navbar = () => {
 			</div>
 			<div className="hidden lg:flex justify-between items-center w-full h-full p-12">
 				<div>
-					<img src={Logo} alt="logo"/>
+					<img src={`${url}/uploads/Logo_2105b82d76.png`} alt="logo"/>
 				</div>
 				<ul className="flex flex-row items-center gap-10 text-open-sans text-blackk font-semibold text-lg p-4">
 					<Link className="hover:text-bground hover:border-b-4 hover:border-b-bground active:text-bground active:border-b-4 active:border-b-bground" to="/">Home</Link>

@@ -1,34 +1,24 @@
 import React from 'react';
 import CardItem from './CardItem';
-import iconspaceGold from '../images/iconspaceGold.png';
-import iconspaceandroidphone from '../images/iconspaceandroidphone.png';
-import iconspaceApps from '../images/iconspaceApps.png';
-import iconspaceCamera from '../images/iconspaceCamera.png';
-import iconspaceChair from '../images/iconspaceChair.png';
-import iconspaceController from '../images/iconspaceController.png';
-import iconspaceNotC from '../images/iconspaceNotC.png';
-import iconspaceNotebook from '../images/iconspaceNotebook.png';
-import iconspaceSoccerBall from '../images/iconspaceSoccerBall.png';
-import iconspaceStethoscope from '../images/iconspaceStethoscope.png';
-import iconspaceTicket from '../images/iconspaceTicket.png';
-import iconspaceTshirt from '../images/iconspaceTshirt.png';
 
 const CardList = () => {
+	let url = "http://localhost:1337";
+
 	return (
 		<div className="grid place-items-center border-t-2 p-4">
 			<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 lg:gap-10 p-8 md:p-12 lg:p-16">
-				<CardItem src={iconspaceTshirt} name="Fashion"/>
-				<CardItem src={iconspaceandroidphone} name="Handphone"/>
-				<CardItem src={iconspaceNotebook} name="Laptop"/>
-				<CardItem src={iconspaceNotC} name="Music"/>
-				<CardItem src={iconspaceCamera} name="Photography"/>
-				<CardItem src={iconspaceChair} name="Furniture"/>
-				<CardItem src={iconspaceStethoscope} name="Health"/>
-				<CardItem src={iconspaceSoccerBall} name="Sports"/>
-				<CardItem src={iconspaceController} name="Games"/>
-				<CardItem src={iconspaceGold} name="Investment"/>
-				<CardItem src={iconspaceTicket} name="Ticket"/>
-				<CardItem src={iconspaceApps} name="More Category"/>
+				<CardItem src={`${url}/uploads/iconspace_Tshirt_5ff7d57a57.png`} name="Fashion"/>
+				<CardItem src={`${url}/uploads/iconspaceandroidphone_28a4bfe901.png`} name="Handphone"/>
+				<CardItem src={`${url}/uploads/iconspace_Notebook_81afa237c7.png`} name="Laptop"/>
+				<CardItem src={`${url}/uploads/iconspace_Not_C_831d97b093.png`} name="Music"/>
+				<CardItem src={`${url}/uploads/iconspace_Camera_b45d8cd393.png`} name="Photography"/>
+				<CardItem src={`${url}/uploads/iconspace_Chair_0e61a27ff5.png`} name="Furniture"/>
+				<CardItem src={`${url}/uploads/iconspace_Stethoscope_6f2930e792.png`} name="Health"/>
+				<CardItem src={`${url}/uploads/iconspace_Soccer_Ball_cf43322e16.png`} name="Sports"/>
+				<CardItem src={`${url}/uploads/iconspace_Controller_6e14995431.png`} name="Games"/>
+				<CardItem src={`${url}/uploads/iconspace_Gold_fd34d11944.png`} name="Investment"/>
+				<CardItem src={`${url}/uploads/iconspace_Ticket_ebf4b8fa60.png`} name="Ticket"/>
+				<CardItem src={`${url}/uploads/iconspace_Apps_0a7e5b0a6e.png`} name="More Category"/>
 			</div>
 		</div>
 	)

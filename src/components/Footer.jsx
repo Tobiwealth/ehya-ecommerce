@@ -1,14 +1,16 @@
 import React from 'react';
-import Logo from '../images/Logo.png';
-import Heart from '../images/Heart.png';
+
 
 const Footer = () => {
+
+	let url = "http://localhost:1337";
+
 	return (
 		<div className="flex justify-center items-center p-8 md:p-10 lg:p-16 w-screen lg:mt-4">
 			<div className="flex flex-col justify-center items-center w-full p-6">
 			    <div className="flex flex-col-reverse md:flex-row md:justify-between md:items-start items-center w-full">
 					<div className="text-center flex flex-col items-center md:items-start gap-4 md:w-1/2 lg:w-1/4 md:p-3">
-						<img src={Logo} alt="logo"/>
+						<img src={`${url}/uploads/Logo_2105b82d76.png`} alt="logo"/>
 						<p className="text-open-sans font-normal text-hero-text text-sm md:text-base md:break-words md:text-left">Build a modern and creative website with crealand</p>
 						<div className="">
 							<i className="fa-brands fa-facebook-f w-10 h-10 rounded-full p-3 m-2 bg-bgash text-center"></i>
@@ -50,7 +52,7 @@ const Footer = () => {
 					</div>
 				</div>
 				<div className="mt-8 flex flex-col items-center gap-4 w-full text-center">
-					<img src={Heart} alt="footer icon"/>
+					<img src={`${url}/uploads/Heart_7a8eb5e551.png`} alt="footer icon"/>
 					<p className="text-open-sans font-semibold text-hero-text text-base">Copyright © 2019. Crafted with love.</p>
 				</div>
 			</div>

@@ -1,9 +1,10 @@
 import React from 'react';
-import HeroImage from '../images/HeroImage.png';
 import Carousel from './Carousel';
 
 
 const Herosection = () => {
+	let url = "http://localhost:1337";
+
 	return (
 		<section className="p-8 pt-10 flex justify-center items-center w-full bg-bgash">
 			<div className="p-2 flex flex-col items-center w-full">
@@ -24,7 +25,7 @@ const Herosection = () => {
 					</div>
 					<div className="flex flex-col md:flex-row md:p-20 xl:p-8 2xl:p-16 w-full lg:w-4/5 xl:w-2/5">
 					    <div className="bg-bluee rounded-full w-14 h-14 lg:w-8 lg:h-8 xl:w-14 xl:h-14 -mb-7 -ml-7 md:-mt-7 md:-mr-7 lg:-mt-4 lg:-mr-4 xl:-mt-7 xl:-mr-7"></div>
-						<img className="z-999 w-full h-fit"  src={HeroImage} alt="hero banner"/>
+						<img className="z-999 w-full h-fit"  src={`${url}/uploads/Hero_Image_0eceb74511.png`} alt="hero banner"/>
 						<div className="bg-yelloww w-6 h-36 md:w-8 md:h-44 -mt-36 -mr-6 md:-mt-0 md:-mr-0 self-end"></div>
 					</div>
 				</div>
