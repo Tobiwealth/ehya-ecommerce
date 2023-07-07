@@ -1,7 +1,9 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
-const HotItems = ({product}) => {
+const HotItems = () => {
 	let url = "http://localhost:1337";
+	const product = useSelector(state => state.cart.productList);
 	
 	return (
 		<>

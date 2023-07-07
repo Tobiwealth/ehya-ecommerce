@@ -1,6 +1,8 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 
-const Blog = ({product}) => {
+const Blog = () => {
+	const product = useSelector(state => state.cart.productList);
 	let url = "http://localhost:1337";
 	return (
 		<div className="flex flex-col justify-center items-center p-8 pb-16 mt-10">

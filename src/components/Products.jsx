@@ -1,8 +1,11 @@
 import React from 'react';
 import Card from './Card';
+import {useSelector} from 'react-redux';
 
-const Products = ({product}) => {
+const Products = () => {
 	let url = "http://localhost:1337";
+	const product = useSelector(state => state.cart.productList);
+	
 
 	return (
 		<div className="flex justify-center items-center p-2 xl:p-0 mb-8">
@@ -16,7 +19,7 @@ const Products = ({product}) => {
 				    	product.map((item,i) => {
 				    		if(i < 3) {
 				    		    return (
-				    		    	<Card key={item.id} src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} name={item?.attributes?.name} price={item?.attributes?.price} fmrprice={item?.attributes?.oldprice}/>
+				    		    	<Card key={item.id} item={item} src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} name={item?.attributes?.name} price={item?.attributes?.price} fmrprice={item?.attributes?.oldprice} id={item?.id}/>
 				    		    )
 				    		}
 				    	})
@@ -33,7 +36,7 @@ const Products = ({product}) => {
 				    	product.map((item,i) => {
 				    		if(i > 3 && i < 8 ) {
 				    		    return (
-				    		    	<Card key={item.id} src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} name={item?.attributes?.name} price={item?.attributes?.price} fmrprice={item?.attributes?.oldprice}/>
+				    		    	<Card key={item.id} item={item} src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} name={item?.attributes?.name} price={item?.attributes?.price} fmrprice={item?.attributes?.oldprice}/>
 				    		    )
 				    		}
 				    	})

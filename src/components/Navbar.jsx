@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import { motion } from "framer-motion";
 import {Link} from 'react-router-dom';
+import {useSelector} from 'react-redux';
 
 const Navbar = () => {
 	let url = "http://localhost:1337";
+	const quantity = useSelector(state => state.cart.totalQuantity);
 	const [closeMobile, setCloseMobile] = useState(false);
 	const variants = {
 		open: { opacity: 1, x: 0 },
@@ -15,6 +17,7 @@ const Navbar = () => {
 			<div className="flex flex-col items-center w-full lg:hidden ">
 				<div className="w-full flex justify-between items-center p-8">
 					<img src={`${url}/uploads/Logo_2105b82d76.png`} alt="logo"/>
+					<Link className=" hover:scale-125 active:scale-125 flex justify-center items-center text-2xl" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></Link>
 					{
 						closeMobile ? 
 						    <div onClick={() => setCloseMobile(false)} ><i className="fas fa-times" style={{fontSize:'27px'}}></i></div> 
@@ -49,6 +52,7 @@ const Navbar = () => {
 					<button className="text-center p-2 rounded-lg w-40 border-2 border-bgblue text-bgblue hover:text-white hover:bg-bgblue hover:border-none active:text-white active:bg-bgblue active:border-none">
 					    <Link to="/">Get it now</Link>
 					</button>
+					<Link className="ml-8 text-2xl flex justify-center items-center" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></Link>
 				</ul>
 			</div>
 		</nav>

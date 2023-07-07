@@ -13,7 +13,7 @@ const MostSoldCamera = ({product}) => {
 				    	product.map((item,i) => {
 				    		if(i > 3 && i < 8){
 				    			return(
-				    				<div className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
+				    				<div key={item.id} className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
 										<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} alt="sold"/></div>
 										<div className="flex flex-col ">
 										    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">{item?.attributes?.name}</h4>
