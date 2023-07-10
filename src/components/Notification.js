@@ -16,7 +16,7 @@ const Notification = () => {
 	},[notification,dispatch])
 	return (
 		<div 
-		    className="sticky top-24 left-0 z-10"
+		    className="sticky top-20 md:top-24 left-0 z-10"
 		>
 			{notification.open && <Alert severity={notification.type}>{notification.message}</Alert>}
 		</div>

@@ -53,7 +53,7 @@ const Cart = () => {
 			initial="hidden"
 			animate="visible"
 			exit="exit"
-		    className="flex justify-center items-center p-8 md:p-20 lg:p-8 bg-bgash w-screen "
+		    className="flex justify-center items-center p-5 md:p-20 lg:p-8 bg-bgash w-screen "
 		>
 			<div className=" flex flex-col lg:grid lg:grid-cols-[4fr_2fr] lg:items-start justify-start gap-10 lg:gap-12 items-center w-full">
 			    <div className="flex flex-col gap-6 w-full">
@@ -73,7 +73,7 @@ const Cart = () => {
 											    	<h3 className="font-bold text-base lg:text-xl text-hk-grotesk text-blackk w-full">{item?.name}</h3>
 											    	<p className="text-open-sans text-greyy text-sm lg:text-base">{item?.description}</p>
 										    	</div>
-										    	<div className="flex flex-col gap-2 mt-auto w-2/3 lg:w-80">
+										    	<div className="flex flex-col gap-2 mt-auto p-5 md:p-8 md:pt-4 lg:p-0 w-full md:w-3/4 lg:w-80">
 											    	<p className="flex justify-between items-center p-4 pl-8 pr-8 text-blackk"><span>${item?.price}</span> <span className="text-blackk">${item?.totalPrice}</span></p>
 											    	<div className="flex justify-between items-center text-white w-full">
 											    		<button onClick={() => handleReduce(item.id)} disabled={item.quantity===1} className="w-24 h-10 rounded-md p-1 bg-bground text-center text-xl cursor-pointer disabled:bg-red-200 disabled:cursor-not-allowed">-</button>

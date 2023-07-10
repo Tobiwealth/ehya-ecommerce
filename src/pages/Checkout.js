@@ -65,11 +65,11 @@ const Checkout = () => {
 			initial="hidden"
 			animate="visible"
 			exit="exit" 
-		    className="flex justify-center items-center p-6 md:p-10 lg:p-20 bg-bgash w-full"
+		    className="flex justify-center items-center p-5 md:p-10 lg:p-20 bg-bgash w-full"
 		>
-			<form autoComplete="off" className="lg:w-4/5 " >
+			<form autoComplete="off" className=" w-full lg:w-4/5 " >
 			    <h2 className="text-center text-hk-grotesk font-bold text-lg md:text-2xl lg:text-4xl text-blackk p-8">Checkout</h2>
-			    <div className="flex flex-col gap-4 bg-white p-8 w-full mb-10">
+			    <div className="flex flex-col gap-4 bg-white p-5 w-full mb-10">
 			        <h2 className="text-hk-grotesk text-blackk font-bold text-base md:text-xl mb-4">1. PERSONAL INFORMATION</h2>
 			        <div className="flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-10 w-full">
 					    <div className="flex flex-col w-full md:w-1/2">
@@ -110,7 +110,7 @@ const Checkout = () => {
 				    	{formik.errors.email && formik.touched.email && <p className="text-firebrick pl-2">{formik.errors.email}</p>}
 				    </div>
 			    </div>
-			    <div className="flex flex-col bg-white p-8 w-full ">
+			    <div className="flex flex-col bg-white p-5 w-full ">
 			        <h2 className="text-hk-grotesk text-blackk font-bold text-base md:text-xl mb-4">2. BILLING ADDRESS</h2>
 			        <div className="grid md:grid-cols-2 gap-4 lg:gap-y-4 lg:gap-x-10">
 					    <div className="flex flex-col">
@@ -191,7 +191,7 @@ const Checkout = () => {
 			        <input className="scale-125" checked={isChecked} onChange={handleCheckboxChange} name="check" type="checkbox"/>
 			    	<label className="ml-2 text-open-sans font-normal text-blackk text-sm md:text-base" htmlFor="check">Same for shipping Address</label>
 			    </div>
-			    <div className="flex flex-col bg-white p-8 w-full ">
+			    <div className="flex flex-col bg-white p-5 w-full ">
 			        <h2 className="text-hk-grotesk text-blackk font-bold text-base md:text-xl mb-4">3. SHIPPING ADDRESS</h2>
 			        <div className="grid md:grid-cols-2 gap-4 lg:gap-y-4 lg:gap-x-10">
 					    <div className="flex flex-col">

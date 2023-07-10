@@ -19,11 +19,11 @@ const Navbar = () => {
 	}
 
 	return (
-		<nav className="flex justify-center w-screen h-24 sticky top-0 bg-white z-50">
+		<nav className="flex justify-center w-screen h-20 md:h-24 sticky top-0 bg-white z-50">
 			<div className="flex flex-col items-center w-full lg:hidden ">
-				<div className="w-full flex justify-between items-center p-8">
+				<div className="w-full flex justify-between items-center p-6">
 					<img src="https://lphkvolpvequyswccgnt.supabase.co/storage/v1/object/public/image/Logo.png" alt="logo"/>
-					<NavLink className=" hover:scale-125 active:scale-125 flex justify-center items-center text-2xl" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></NavLink>
+					<NavLink className="flex justify-center items-center text-xl" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></NavLink>
 					{
 						closeMobile ? 
 						    <div onClick={() => setCloseMobile(false)} ><i className="fas fa-times" style={{fontSize:'27px'}}></i></div> 
@@ -35,7 +35,7 @@ const Navbar = () => {
                     variants={variants}
                     className="w-full "
 				>
-					<ul className="flex flex-col items-center gap-10 p-10 bg-bground w-full text-blackk text-open-sans font-bold text-lg">
+					<ul className="flex flex-col items-center gap-10 p-10 bg-bground w-full h-screen text-blackk text-open-sans font-bold text-lg">
 						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/">Home</NavLink>
 						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/about">About</NavLink>
 						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/newarrival">New Arrivals</NavLink>
@@ -56,7 +56,7 @@ const Navbar = () => {
 					<button className="text-center p-2 rounded-lg w-40 border-2 border-bgblue text-bgblue hover:text-white hover:bg-bgblue hover:border-none">
 					    <NavLink to="/">Login</NavLink>
 					</button>
-					<NavLink className="ml-8 text-2xl flex justify-center items-center" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></NavLink>
+					<NavLink className="ml-8 text-xl flex justify-center items-center" to="/cart"><i className="fa-solid fa-cart-shopping"></i><span className="text-center bg-bground w-6 h-6 p-0 rounded-full text-white text-base -translate-x-4 -translate-y-4 z-100">{quantity}</span></NavLink>
 				</ul>
 			</div>
 		</nav>
