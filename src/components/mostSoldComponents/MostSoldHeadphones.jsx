@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MostSoldHeadphones = ({product}) => {
-	let url = "http://localhost:1337"; 
 
 	return (
 		<div>
@@ -13,13 +12,13 @@ const MostSoldHeadphones = ({product}) => {
 				    		if(i > 7 && i < 12){
 				    			return(
 				    				<div key={item.id} className="flex flex-col md:flex-row justify-center md:justify-start items-start md:items-center p-6 md:p-0 md:pl-4 rounded-lg gap-6 w-[16.25rem] h-[9.6rem] md:w-80 md:h-24 lg:w-[22.4rem] bg-bgash">
-										<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={`${url}${item?.attributes?.image?.data?.attributes?.url}`} alt="sold"/></div>
+										<div><img className="w-[4.15rem] h-[4.15rem] mb:ml-6" src={`${item?.imageUrl}`} alt="sold"/></div>
 										<div className="flex flex-col ">
 										    <h4 className="text-hk-grotesk font-semibold text-blackk text-base text-left md:mb-2">Beats by Dre C</h4>
 										    <div className="flex justify-center items-center gap-2">
-										    	<img className="" src={`${url}/uploads/star_f995c25b87.png`} alt="star"/>
-										    	<span className="text-blackk text-sm text-open-sans -ml-1">{item?.attributes?.rating}</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
-										    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>{item?.attributes?.unitsold}k</span><span className="ml-1">Unit sold</span></p>
+										    	<img className="" src="https://lphkvolpvequyswccgnt.supabase.co/storage/v1/object/public/image/star.png" alt="star"/>
+										    	<span className="text-blackk text-sm text-open-sans -ml-1">{item?.rating}</span> <span className="w-1 h-1 m-2 rounded-full bg-hero-text"></span>
+										    	<p className="text-hero-text text-sm font-semibold text-open-sans"><i className="fa-solid fa-cart-shopping mr-2"></i><span>{item?.unitsold}</span><span className="ml-1">Units sold</span></p>
 										    </div>
 										</div>
 									</div>

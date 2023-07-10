@@ -5,6 +5,7 @@ const cartSlice = createSlice({
 	initialState: {
 		itemsList: [],
 		productList: [],
+		soldItemsList:[],
 		totalQuantity: 0,
 		subtotalPrice: 0
 	},
@@ -15,21 +16,21 @@ const cartSlice = createSlice({
 			const existingItem = state.itemsList.find((item)=> item.id === newItem.id);
 			if(existingItem){
 				existingItem.quantity++;
-				existingItem.totalPrice += newItem.attributes?.price;
-				state.subtotalPrice += newItem.attributes?.price;
+				existingItem.totalPrice += newItem?.price;
+				state.subtotalPrice += newItem?.price;
 			}else{
 				state.itemsList.push({
 					id: newItem?.id,
-					price: newItem?.attributes?.price,
-					oldPrice: newItem?.attributes?.oldprice,
+					price: newItem?.price,
+					oldPrice: newItem?.oldprice,
 					quantity: 1,
-					totalPrice: newItem?.attributes?.price,
-					url: newItem?.attributes?.image?.data?.attributes?.url,
-					description: newItem?.attributes?.description, 
-					name:newItem?.attributes?.name
+					totalPrice: newItem?.price,
+					imageUrl: newItem?.imageUrl,
+					description: newItem?.description, 
+					name:newItem?.name
 				});
 				state.totalQuantity++;
-				state.subtotalPrice += newItem?.attributes?.price;
+				state.subtotalPrice += newItem?.price;
 			}
 		},
 		removeFromCart(state, action){
@@ -63,6 +64,9 @@ const cartSlice = createSlice({
 		},
 		addProducts(state, action) {
 			state.productList = action.payload;
+		},
+		addsoldProducts(state, action) {
+			state.soldItemsList = action.payload;
 		}
 	}
 })

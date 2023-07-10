@@ -20,6 +20,7 @@ module.exports = {
         'light-green' : '#DDFFDD',
         'redd' : 'rgba(233, 84, 50, 1)',
         'light-grey' : 'rgba(179, 186, 197, 1)',
+        'firebrick' : 'firebrick',
       },
       borderRadius: {
         'half': '50%',

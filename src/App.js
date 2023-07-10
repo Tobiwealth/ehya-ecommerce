@@ -1,51 +1,70 @@
-import React, {useState,useEffect} from 'react';
-import {BrowserRouter as Router, Routes , Route} from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { Routes , Route, useLocation} from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Cart from './pages/Cart';
+import Popup from './components/Popup';
+import Notification from './components/Notification';
+import Checkout from './pages/Checkout';
 import Product from './pages/Product';
+import About from './pages/About';
+import Faqs from './pages/Faqs';
 import {cartActions} from './store/CartSlice';
+import {uiActions} from './store/UiSlice';
 import {useDispatch} from 'react-redux';
+import {AnimatePresence}from 'framer-motion';
+import supabase from './config/supabase';
+
 
 function App() {
+  const location = useLocation();
   const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(true);
-
+  
   useEffect(() => {
     const fetchData = async () => {
-      try{
-        const response = await fetch("http://localhost:1337/api/products?populate=*", {
-          headers: {
-                Authorization : "Bearer e47738a2164727590016aae94cad06acd330c805500c9e321f1ebc01dcd4dd8f5c239c6d4f271c1ffeec146e59a81ed71d27148147a8806c628c088c5ed3e82c8b4ab5a38b04b042ca07f3c750f2ef06b87d918ae1bad2fc58624e8dd5340a41c262cf12230c98bf67e19cdaf591ee0a68779f488e59d108acf86e4eccbe24fe" 
-            }
-          });
-          const res = await response.json();
-          console.log(res.data)
-          dispatch(cartActions.addProducts(res.data));
-          setIsLoading(false);
-          //console.log();  
-      }catch(err){
-        console.log(err);
-      }
+      dispatch(uiActions.setIsloadingtrue());
+      const {data: productData, error:error1} = await supabase
+        .from('products')
+        .select()
+
+      const {data: soldData, error:error2} = await supabase
+        .from('soldProducts')
+        .select()
+
+        if(error1 || error2) {
+          console.log(error1,error2);
+        }
+        if(productData){
+          dispatch(cartActions.addProducts(productData));
+        }
+        if(soldData){
+          dispatch(cartActions.addsoldProducts(soldData));
+        }
+        dispatch(uiActions.setIsloadingfalse());
     };
     fetchData();
-  },[])
+  }, [dispatch]);
 
   return (
     <div className="">
-      <Router>
-        <Navbar/>
-        <Routes>
-          <Route>
-            <Route path="/" element={<Home/>}/>
-            
-          </Route>
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/cart/:id" element={<Product/>}/> 
-        </Routes>
-        <Footer/>
-      </Router>
+      <Navbar/>
+      <Notification/>
+      <AnimatePresence>
+        <ScrollToTop> 
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home/>}/> 
+            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/newarrival" element={<Product/>}/> 
+            <Route path="/checkout" element={<Checkout/>}/> 
+            <Route path="/popup" element={<Popup/>}/> 
+            <Route path="/about" element={<About/>}/> 
+            <Route path="/faqs" element={<Faqs/>}/> 
+          </Routes>
+        </ScrollToTop> 
+      </AnimatePresence>
+      <Footer/>
     </div>
   );
 }
