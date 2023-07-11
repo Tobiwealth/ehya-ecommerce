@@ -51,12 +51,6 @@ const MostSoldItems = () => {
 
 	return (
 		<div className="w-full p-3">
-			{/*<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center p-10 lg:p-16 w-full border-b-2">
-		        <MostSoldLaptop product={soldProduct}/>
-		        <MostSoldCamera product={soldProduct}/>
-		        <MostSoldHeadphones product={soldProduct}/>
-			</div>*/}
-
 			<Slider {...settings}>
 				<div className="p-12 pb-0 md:p-2 flex justify-center items-center">
 				    <MostSoldLaptop product={soldProduct}/>
