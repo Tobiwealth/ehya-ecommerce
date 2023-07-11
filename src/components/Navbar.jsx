@@ -35,12 +35,12 @@ const Navbar = () => {
                     variants={variants}
                     className="w-full "
 				>
-					<ul className="flex flex-col items-center gap-10 p-10 bg-bground w-full h-screen text-blackk text-open-sans font-bold text-lg">
-						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/">Home</NavLink>
-						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/about">About</NavLink>
-						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/newarrival">New Arrivals</NavLink>
-						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/faqs">FAQs</NavLink>
-						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-white hover:scale-125 " to="/">Login</NavLink>
+					<ul className="flex flex-col items-center gap-10 p-10 bg-white w-full h-screen text-blackk text-open-sans font-bold text-lg">
+						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-bground hover:scale-125 " to="/">Home</NavLink>
+						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-bground hover:scale-125 " to="/about">About</NavLink>
+						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-bground hover:scale-125 " to="/newarrival">New Arrivals</NavLink>
+						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-bground hover:scale-125 " to="/faqs">FAQs</NavLink>
+						<NavLink onClick={()=>setCloseMobile(false)} className="hover:text-bground hover:scale-125 " to="/">Login</NavLink>
 					</ul>
 				</motion.div>
 			</div>

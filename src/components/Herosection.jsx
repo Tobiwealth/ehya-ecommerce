@@ -33,7 +33,7 @@ const Herosection = () => {
 						</ul>
 						<div className="flex flex-col md:flex-row items-center justify-center w-full">
 							<input className="text-blackk placeholder:text-center md:placeholder:text-left placeholder-bgash w-full xl:w-[34rem] h-32 md:h-16 p-4 md:p-3 rounded-lg" type="text" placeholder="Insert your email"/>
-							<button className="text-open-sans bg-green-button text-white w-[calc(100%-1.2rem)] md:w-[12rem] xl:w-[12rem] h-12 rounded-lg -translate-y-12 md:-translate-y-0 md:-translate-x-[10.0rem] xl:-translate-x-[11.2rem]">Join Pre-Order</button>
+							<button className="text-open-sans bg-green-button font-bold text-base md:text-lg text-white w-[calc(100%-1.2rem)] md:w-[12rem] xl:w-[12rem] h-12 rounded-lg -translate-y-12 md:-translate-y-0 md:-translate-x-[10.0rem] xl:-translate-x-[11.2rem]">Join Pre-Order</button>
 						</div>
 					</div>
 					<div className="flex flex-col md:flex-row md:p-20 xl:p-8 2xl:p-16 w-full lg:w-4/5 xl:w-2/5">
