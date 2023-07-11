@@ -4,9 +4,9 @@ import React from 'react';
 const MostSoldLaptop = ({product}) => {
 
 	return (
-		<div>
+		<div className="flex justify-center items-center">
 			<div className="p-4">
-				<h3 className="text-hk-grotesk font-bold text-blackk text-2xl mb-8">Most Sold Laptop</h3>
+				<h3 className="text-hk-grotesk text-center md:text-left font-bold text-blackk text-2xl mb-8">Most Sold Laptop</h3>
 				<div className="flex flex-col gap-6">
 				   {
 				   	    product.map((item,i) => {

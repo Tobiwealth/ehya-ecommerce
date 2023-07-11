@@ -24,6 +24,9 @@ module.exports = {
       },
       borderRadius: {
         'half': '50%',
+      },
+      screens: {
+        'xxl' : '1300px'
       }
     },
   },
